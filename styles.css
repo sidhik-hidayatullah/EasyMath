@@ -1,9 +1,14 @@
-/* Custom CSS for EasyMath */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
-/* Custom CSS for EasyMath */
-/* Tambahkan padding ke elemen di bawah navbar */
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding-top: 70px;
   /* Sesuaikan dengan tinggi navbar jika ada */
 }
@@ -46,31 +51,79 @@ body {
   margin-right: 15px;
 }
 
-/* heosection */
-.hero-section {
-  padding: 50px 0;
+#hero {
+  flex: 1;
+  position: relative;
 }
 
-.hero-section .carousel {
-  max-width: 100%;
-  height: auto;
-}
-
-.hero-section .carousel-item img {
-  width: 100%;
-  height: 75vh;
-  /* Atur tinggi sesuai kebutuhan */
-  object-fit: contain;
-  /* Memastikan gambar tidak terdistorsi */
+.carousel-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-content {
-  z-index: 10;
-  /* Memastikan konten berada di atas gambar carrousel */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  /* Latar belakang transparan untuk teks */
+  z-index: 1;
+}
+
+.profile-card {
+  background-color: #002855;
+  color: #fff;
+  text-align: center;
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 10px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.profile-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+.profile-card h5 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.profile-card p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #00b0ff;
+}
+
+.profile-card .social-icons a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.text-wrapper {
+  height: 100%;
+}
+
+.carousel-item img.book-cover {
+  height: 100%;
+  /* Make the book cover image fill the container height */
 }
 
 .kategori #kategori-flters li {
@@ -250,6 +303,10 @@ body {
 footer {
   background-color: #343a40;
   color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 110;
 }
 
 footer h5 {
